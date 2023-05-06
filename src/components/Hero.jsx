@@ -15,13 +15,13 @@ const Hero = () => {
       <div className="hero-text">
         <h1>Hey, I'm Izsal 👋</h1>
         <p>
-          I'm a software developer based in Lagos, Nigeria. I specialize in
-          building (and occasionally designing) exceptional websites,
+          I'm a software developer based in Yogyakarta, Indonesia. I specialize
+          in building (and occasionally designing) exceptional websites,
           applications, and everything in between.
         </p>
         <div className="social-icons">
           <a
-            href="https://twitter.com/olawanle_izsal"
+            href="https://twitter.com/Afandi_Qur"
             aria-label="Twitter"
             target="_blank"
             rel="noopener noreferrer"
@@ -29,7 +29,7 @@ const Hero = () => {
             <i className="fa-brands fa-twitter"></i>
           </a>
           <a
-            href="https://github.com/olawanleizsal"
+            href="https://github.com/izsal"
             aria-label="GitHub"
             target="_blank"
             rel="noopener noreferrer"
@@ -37,7 +37,7 @@ const Hero = () => {
             <i className="fa-brands fa-github"></i>
           </a>
           <a
-            href="https://www.linkedin.com/in/olawanleizsal/"
+            href="https://www.linkedin.com/in/izsal-qurlinas-afandi-983614165/"
             aria-label="LinkedIn"
             target="_blank"
             rel="noopener noreferrer"

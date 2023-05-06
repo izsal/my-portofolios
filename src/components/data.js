@@ -3,37 +3,30 @@
 export const projectData = [
   {
     id: 1,
-    title: 'Todo List App',
+    title: 'React Crud',
     description:
-      'A simple Todo List App built with JavaScript. All datas are stored in localstorage. It helps users check list out their plans and tick as they do them.',
-    gitHubLink: 'https://github.com/olawanlejoel/Todo-List-App',
+      'A simple Crud App built with JavaScript. All datas are stored in localstorage. It helps users to make create, update and delete data ',
+    gitHubLink: 'https://github.com/izsal/react_crud',
   },
   {
     id: 2,
-    title: 'Books Library App',
+    title: 'Social Media',
     description:
-      'A simple Book Library App built with JavaScript. It helps readers have a good list of books they are either currently reading or have finished reading.',
-    gitHubLink: 'https://github.com/olawanlejoel/Book-Library',
+      'A simple Social Media App built with JavaScript. It helps users to make post in socmed with coment and may users',
+    gitHubLink: 'https://github.com/izsal/Fullstack-socmed-FrontEnd',
   },
   {
     id: 3,
-    title: 'Quotes Generator',
+    title: 'Footbal data and Score',
     description:
-      'Helps you generate quotes from about 1600 quotes written by different authors . Quotes are automatically copied to your clipboards.',
-    gitHubLink: 'https://github.com/olawanlejoel/random-quote-generator',
+      'Football live score and provisional scoreboard',
+    gitHubLink: 'https://github.com/izsal/Footbal-data-PWA.github.io',
   },
   {
     id: 4,
-    title: 'Password Generator',
+    title: 'Laravel Backend',
     description:
-      'Helps you generates random passwords, you can select what you want your password to entail and also you can copy generated password to clipboard.',
-    gitHubLink: 'https://github.com/olawanlejoel/Password-Generator',
-  },
-  {
-    id: 5,
-    title: 'Twitter UI Clone',
-    description:
-      'Simple Twitter UI clone built with TailwindCSS and Vue Js. This covers only the homepage of Twitter UI. This is cool to get started with TailwindCSS as it helps understand basic concepts.',
-    gitHubLink: 'https://github.com/olawanlejoel/TwitterUI-clone',
+      'backend app for manage person app frontend, and laravel as a backend to send data update data or delete data person in front end person',
+    gitHubLink: 'https://github.com/izsal/laravel_backend',
   },
 ];
