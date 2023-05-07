@@ -29,4 +29,10 @@ export const projectData = [
       'backend app for manage person app frontend, and laravel as a backend to send data update data or delete data person in front end person',
     gitHubLink: 'https://github.com/izsal/laravel_backend',
   },
+  {
+    id:5,
+    title: 'E-office',
+    description: 'web app for incoming and outgoing mail with PHP MVC Framework',
+    gitHubLink: "https://gitlab.com/izsalafandi/e-office"
+  },
 ];

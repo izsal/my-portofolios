@@ -49,6 +49,10 @@ const Skills = () => {
           <i className="fa-brands fa-slack slack-icon"></i>
           <p>Slack</p>
         </div>
+        <div className="skill-card gitlab">
+          <i className="fa-brands fa-gitlab gitlab-icon"></i>
+          <p>Gitlab</p>
+        </div>
       </div>
     </div>
   );
