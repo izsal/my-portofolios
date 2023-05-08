@@ -32,7 +32,19 @@ export const projectData = [
   {
     id:5,
     title: 'E-office',
-    description: 'web app for incoming and outgoing mail with PHP MVC Framework',
+    description: 'web app for incoming and outgoing mail with PHP MVC Framework, and use for my company at RunSystem',
     gitHubLink: "https://gitlab.com/izsalafandi/e-office"
+  },
+  {
+    id:6,
+    title: 'Fullstack socmed FrontEnd similar like twitter concept ',
+    description: 'web app socmed inspired by twitter. ',
+    gitHubLink: "https://github.com/izsal/Fullstack-socmed-FrontEnd"
+  },
+  {
+    id:7,
+    title: 'Fullstack socmed BackEnd similar like twitter concept ',
+    description: 'web app socmed inspired by twitter. ',
+    gitHubLink: "https://github.com/izsal/fullstack-socmed-backend"
   },
 ];
