@@ -389,3 +389,7 @@ hr {
   margin-bottom: 1rem;
   text-align: center;
 }
+
+.mr-5 {
+  margin-right: 5px;
+}
