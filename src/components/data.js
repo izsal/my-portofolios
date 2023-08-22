@@ -60,4 +60,10 @@ export const projectData = [
     description: "E-Commerce Store to show data from ecommerce-admin. ",
     gitHubLink: "https://github.com/izsal/next13-ecommerece-store",
   },
+  {
+    id: 9,
+    title: "Netflix Clone",
+    description: "Netflix web app clone. ",
+    gitHubLink: "https://github.com/izsal/clone-netflix",
+  },
 ];
