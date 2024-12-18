@@ -15,7 +15,7 @@ const Hero = () => {
       <div className="hero-text">
         <h1>Hey, I'm Izsal 👋</h1>
         <p>
-          I'm a software developer based in Yogyakarta, Indonesia. I specialize
+          I'm a software developer based in Jakarta, Indonesia. I specialize
           in building (and occasionally designing) exceptional websites,
           applications, and everything in between.
         </p>

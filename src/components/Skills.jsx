@@ -14,7 +14,7 @@ const Skills = () => {
           <p>CSS</p>
         </div>
         <div className="skill-card js">
-          <i className="fa-brands fa-js-square js-icon"></i>
+          <i className="fa-brands fa-js js-icon"></i>
           <p>JavaScript</p>
         </div>
         <div className="skill-card react">
@@ -28,6 +28,10 @@ const Skills = () => {
         <div className="skill-card mysql">
           <i className="fa-solid fa-database"></i>
           <p>Mysql</p>
+        </div>
+        <div className="skill-card express">
+          <i className="fa-brands fa-node-js express-icon"></i>
+          <p>Express JS </p>
         </div>
         <div className="skill-card php">
           <i className="fa-brands fa-php php-icon"></i>
@@ -49,9 +53,21 @@ const Skills = () => {
           <i className="fa-regular fa-database postgresql-icon"></i>
           <p>PostgreSql</p>
         </div>
+        <div className="skill-card go">
+          <i className="fa-regular fa-brands fa-golang"></i>
+          <p>Golang</p>
+        </div>
         <div className="skill-card gitlab">
           <i className="fa-brands fa-gitlab gitlab-icon"></i>
           <p>Gitlab</p>
+        </div>
+        <div className="skill-card dart-lang">
+          <i className="fa-brands fa-dart-lang dart-lang-icon"></i>
+          <p>Dart</p>
+        </div>
+        <div className="skill-card docker">
+          <i className="fa-brands fa-docker docker-icon"></i>
+          <p>Docker </p>
         </div>
       </div>
     </div>

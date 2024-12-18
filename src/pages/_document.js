@@ -1,6 +1,6 @@
 // pages/_document.js
 
-import { Html, Head, Main, NextScript } from 'next/document';
+import { Html, Head, Main, NextScript } from "next/document";
 
 export default function Document() {
   return (
@@ -9,15 +9,15 @@ export default function Document() {
         <meta charSet="utf-8" />
         <link
           rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
-          integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+          integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
           crossorigin="anonymous"
           referrerpolicy="no-referrer"
         />
       </Head>
       <body>
-      <Main />
-      <NextScript />
+        <Main />
+        <NextScript />
       </body>
     </Html>
   );
