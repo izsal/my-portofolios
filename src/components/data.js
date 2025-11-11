@@ -6,10 +6,10 @@ export const projectData = [
     description:
       "full-stack website with NextJS, Typescript, Prisma, dan Redux Toolkit.",
     image: [
-      "https://picsum.photos/seed/vegeta1/400/300",
-      "https://picsum.photos/seed/vegeta2/400/300",
-      "https://picsum.photos/seed/vegeta3/400/300",
-      "https://picsum.photos/seed/vegeta4/400/300",
+      "/images/projects/Vegeta/Vegeta_01.png",
+      "/images/projects/Vegeta/Vegeta_02.png",
+      "/images/projects/Vegeta/Vegeta_03.png",
+      "/images/projects/Vegeta/Vegeta_04.png",
     ],
     technologies: ["Next.js", "TypeScript", "Prisma", "Redux Toolkit"],
     github: "https://github.com/izsal/Vegeta-E-Commerce",
