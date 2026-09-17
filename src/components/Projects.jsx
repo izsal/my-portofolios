@@ -1,78 +1,61 @@
 // components/Projects.jsx
-import Image from "next/image";
-import React from "react";
-import { projectData } from "./data.js";
 import Link from "next/link";
+import { projectData } from "./data.js";
+import { TechIcon } from "./TechIcons";
 
 const Projects = () => {
   return (
-    <div className="projects-container">
-      <h2>
-        PRO<span style={{ color: "#ffcc1a" }}>JECTS</span>
-      </h2>
-      <div className="projects-grid">
+    <section className="selected-projects-section" id="projects" aria-label="Selected Works">
+      <div className="section-header">
+        <h2>Selected Works</h2>
+        <span className="header-link">
+          <span>Catalog ({projectData.length})</span>
+        </span>
+      </div>
+
+      <div className="projects-list">
         {projectData.map((project) => (
-          <div key={project.id} className="project-card transform cursor-pointer hover:scale-105 transition-all duration-200">
-            <div className="project-header">
-              <i className="fa-regular fa-folder folder-icon"></i>
-              <div className="small-icons">
-                {project.github && (
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <i className="fa-brands fa-github"></i>
-                  </a>
-                )}
-                {project.link && (
-                  <a
-                    href={project.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <i className="fa-solid fa-arrow-up-right-from-square"></i>
-                  </a>
-                )}
+          <Link
+            key={project.id}
+            href={`/projects/${project.id}`}
+            className="project-row"
+          >
+            <div className="project-title-bar">
+              <span className="project-title">
+                <span>{project.title}</span>
+                <svg
+                  className="project-arrow"
+                  width="12"
+                  height="12"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2.2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M7 7h10v10" />
+                  <path d="M7 17 17 7" />
+                </svg>
+              </span>
+            </div>
+
+            <p className="project-desc">{project.description}</p>
+
+            {project.technologies && (
+              <div className="project-tech-tags">
+                {project.technologies.map((tech, tIdx) => (
+                  <span key={tIdx} className="project-tag inline-flex items-center gap-1">
+                    <TechIcon name={tech} size={11} />
+                    <span>{tech}</span>
+                  </span>
+                ))}
               </div>
-            </div>
-
-            {/* Project Image */}
-             {project.image && (
-               <div
-                 style={{
-                   position: "relative",
-                   width: "100%",
-                   height: "200px",
-                   marginBottom: "1rem",
-                   borderRadius: "5px",
-                   overflow: "hidden",
-                   backgroundColor: "#2a2b2d",
-                 }}
-               >
-                 <Link href={`/projects/${project.id}`}>
-                    <Image
-                      src={Array.isArray(project.image) ? project.image[0] : project.image}
-                      alt={project.title}
-                      fill
-                      style={{ objectFit: "contain", padding: "10px", cursor: "pointer" }}
-                    />
-                  </Link>
-               </div>
-             )}
-
-            <div className="project">
-              <h3>
-                <Link href={`/projects/${project.id}`} style={{ color: "inherit", textDecoration: "none" }}>
-                  {project.title}
-                </Link>
-              </h3>
-              <p>{project.description}</p>
-            </div>
-          </div>
+            )}
+          </Link>
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 
