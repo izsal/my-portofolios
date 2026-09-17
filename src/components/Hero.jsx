@@ -18,13 +18,21 @@ const Hero = () => {
         <PixelatedAvatar
           src="/images/profiles.jpeg"
           alt="Izsal Qurlinas Afandi headshot"
-          size={74}
+          size={82}
         />
 
         {/* Identity Headings */}
         <div className="hero-nameset">
           <h1>
-            Izsal Qurlinas Afandi<span className="dot">.</span>
+            <span className="name-izsal-interactive">
+              {"Izsal".split("").map((letter, idx) => (
+                <span key={idx} className="hover-letter">
+                  {letter}
+                </span>
+              ))}
+            </span>{" "}
+            <span>Qurlinas Afandi</span>
+            <span className="dot">.</span>
           </h1>
           <div className="hero-role">Software Engineer • Web &amp; Backend Systems</div>
 

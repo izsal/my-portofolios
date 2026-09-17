@@ -1,6 +1,27 @@
 // components/Footer.jsx
+import { useEffect, useRef, useState } from "react";
 
 const Footer = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const wordmarkRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.15 }
+    );
+
+    if (wordmarkRef.current) {
+      observer.observe(wordmarkRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <footer className="home-footer-awwwards" id="site-footer">
       <div className="footer-meta-container">
@@ -74,7 +95,10 @@ const Footer = () => {
 
       {/* Grand Horizon Stage: Monumental Typography Wordmark */}
       <div className="wordmark-horizon-viewport" aria-hidden="true">
-        <div className="wordmark-cluster">
+        <div
+          ref={wordmarkRef}
+          className={`wordmark-cluster ${isVisible ? "visible" : ""}`}
+        >
           <span>I</span>
           <span>Z</span>
           <span>S</span>

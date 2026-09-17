@@ -2,50 +2,36 @@
 import { useMemo } from "react";
 
 const ActivityCadence = () => {
-  // Generate deterministic 26-week heatmap data
-  const weeks = useMemo(() => {
-    const data = [];
-    // Seedable pseudorandom pattern representing active coding cadence
-    const pattern = [
-      [0, 1, 0, 2, 0, 0, 1],
-      [1, 0, 3, 2, 1, 0, 0],
-      [0, 2, 1, 4, 2, 1, 0],
-      [1, 3, 2, 1, 3, 0, 1],
-      [0, 1, 2, 3, 4, 2, 0],
-      [2, 0, 1, 2, 1, 0, 1],
-      [1, 2, 3, 1, 2, 3, 0],
-      [0, 1, 0, 3, 2, 1, 2],
-      [3, 2, 4, 1, 3, 0, 0],
-      [1, 0, 2, 3, 1, 2, 1],
-      [0, 3, 1, 2, 4, 1, 0],
-      [2, 1, 3, 2, 1, 0, 1],
-      [1, 2, 0, 4, 3, 2, 0],
-      [0, 1, 2, 1, 2, 1, 1],
-      [2, 3, 4, 2, 1, 0, 0],
-      [1, 0, 2, 3, 2, 1, 2],
-      [0, 2, 1, 3, 4, 2, 0],
-      [3, 1, 2, 1, 3, 0, 1],
-      [1, 2, 3, 4, 2, 1, 0],
-      [0, 1, 2, 1, 3, 2, 1],
-      [2, 3, 1, 4, 2, 0, 0],
-      [1, 0, 2, 3, 1, 2, 1],
-      [0, 2, 3, 2, 4, 1, 0],
-      [3, 1, 2, 3, 2, 0, 1],
-      [1, 4, 3, 2, 1, 2, 0],
-      [2, 3, 4, 2, 3, 1, 0],
-    ];
-
-    return pattern;
-  }, []);
+  // Exact 22-column x 7-row matrix matching the reference cadence heatmap
+  const weeks = useMemo(() => [
+    [0, 0, 0, 0, 0, 0, 1],
+    [0, 0, 0, 1, 0, 0, 0],
+    [0, 0, 0, 0, 1, 1, 1],
+    [0, 0, 1, 1, 1, 1, 0],
+    [0, 1, 0, 1, 0, 0, 0],
+    [0, 0, 0, 0, 1, 0, 0],
+    [0, 0, 1, 1, 0, 0, 0],
+    [0, 1, 0, 0, 0, 1, 0],
+    [0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 1, 0, 0, 0],
+    [0, 0, 0, 1, 0, 0, 0],
+    [1, 3, 1, 1, 1, 0, 1],
+    [1, 1, 1, 1, 1, 1, 1],
+    [1, 1, 1, 1, 1, 0, 1],
+    [1, 2, 2, 1, 1, 2, 1],
+    [1, 1, 1, 1, 1, 1, 1],
+    [1, 1, 1, 1, 1, 1, 1],
+    [1, 1, 1, 1, 1, 2, 1],
+    [1, 1, 1, 1, 1, 1, 1],
+    [1, 1, 1, 1, 1, 1, 2],
+    [2, 1, 1, 1, 1, 1, 1],
+    [1, 1, 2, 2, 4, 1, 0],
+  ], []);
 
   return (
     <section className="home-activity" aria-label="Engineering Cadence">
-      <div className="section-header">
-        <h2>The engineering cadence</h2>
-      </div>
-
-      <div className="home-activity__surface">
-        {/* Real Ingested 26-Week Heatmap Grid (7 days per column) */}
+      <div className="home-activity__card">
+        {/* Left: 22-week heatmap grid */}
         <div className="home-activity__chart-wrapper">
           <div className="home-activity__chart" id="activity-heatmap-chart">
             {weeks.map((week, wIdx) => (
@@ -55,7 +41,7 @@ const ActivityCadence = () => {
                     key={dIdx}
                     className="home-activity__day"
                     data-level={level}
-                    title={`Day contribution intensity: ${level}`}
+                    title={`Day contribution level: ${level}`}
                   />
                 ))}
               </div>
@@ -63,51 +49,57 @@ const ActivityCadence = () => {
           </div>
         </div>
 
-        {/* Summary Count & Live GitHub Link */}
-        <div className="home-activity__summary">
-          <div>
-            <strong>1,480+</strong>
-            <span>contributions recorded</span>
-          </div>
-          <a
-            className="header-link"
-            href="https://github.com/izsal"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <span>GitHub log</span>
-            <svg
-              className="header-chevron"
-              width="11"
-              height="11"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2.2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <path d="M7 7h10v10" />
-              <path d="M7 17 17 7" />
-            </svg>
-          </a>
-        </div>
+        {/* Vertical divider */}
+        <div className="home-activity__divider" aria-hidden="true" />
 
-        {/* Real Empirical Metrics Column */}
-        <dl className="home-activity__metrics">
-          <div className="metric-box">
-            <dt>Active Days</dt>
-            <dd>156 days</dd>
+        {/* Right: Metrics & stats panel */}
+        <div className="home-activity__stats-panel">
+          <div className="home-activity__stats-header">
+            <div className="home-activity__stat-big">
+              <span className="home-activity__count">3,816</span>
+              <span className="home-activity__sub">contributions last year</span>
+            </div>
+            <a
+              href="https://github.com/izsal"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="home-activity__log-link"
+              title="View GitHub contribution profile"
+            >
+              <span>GitHub log</span>
+              <svg
+                width="11"
+                height="11"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.4"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M7 7h10v10" />
+                <path d="M7 17 17 7" />
+              </svg>
+            </a>
           </div>
-          <div className="metric-box">
-            <dt>Longest Streak</dt>
-            <dd>42 days</dd>
+
+          <div className="home-activity__stats-sep" aria-hidden="true" />
+
+          <div className="home-activity__stats-list">
+            <div className="home-activity__stat-row">
+              <span className="stat-label">Active days</span>
+              <span className="stat-val">178 days</span>
+            </div>
+            <div className="home-activity__stat-row">
+              <span className="stat-label">Longest streak</span>
+              <span className="stat-val">83 days</span>
+            </div>
+            <div className="home-activity__stat-row">
+              <span className="stat-label">Public repos</span>
+              <span className="stat-val">47 repos</span>
+            </div>
           </div>
-          <div className="metric-box">
-            <dt>Public Repos</dt>
-            <dd>28 repos</dd>
-          </div>
-        </dl>
+        </div>
       </div>
     </section>
   );

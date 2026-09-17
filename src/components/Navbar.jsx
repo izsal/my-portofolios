@@ -18,13 +18,13 @@ const Navbar = () => {
       document.documentElement.style.colorScheme = "dark";
       try {
         localStorage.setItem("theme", "dark");
-      } catch (e) {}
+      } catch (e) { }
     } else {
       document.documentElement.classList.remove("dark");
       document.documentElement.style.colorScheme = "light";
       try {
         localStorage.setItem("theme", "light");
-      } catch (e) {}
+      } catch (e) { }
     }
   };
 
@@ -66,7 +66,16 @@ const Navbar = () => {
               className="site-logo-img"
             />
           </div>
-          <span>Izsal Afandi</span>
+          <span>
+            <span className="name-izsal-interactive">
+              {"Izsal".split("").map((letter, idx) => (
+                <span key={idx} className="hover-letter">
+                  {letter}
+                </span>
+              ))}
+            </span>{" "}
+            Afandi
+          </span>
         </Link>
 
         {/* Clean In-Flow Horizontal Links */}
@@ -81,7 +90,7 @@ const Navbar = () => {
               Experience
             </a>
           </li>
-          <li>
+          {/* <li>
             <a className="site-nav__link" href="#skills">
               Tech
             </a>
@@ -90,7 +99,7 @@ const Navbar = () => {
             <a className="site-nav__link" href="#contact">
               Contact
             </a>
-          </li>
+          </li> */}
         </ul>
 
         {/* Tactile Toolbar Controls */}
