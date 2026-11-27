@@ -1,51 +1,73 @@
 // components/ActivityCadence.jsx
-import { useMemo } from "react";
+const FALLBACK = {
+  total: null,
+  activeDays: null,
+  longestStreak: null,
+  publicRepos: null,
+  weeks: [],
+  monthLabels: [],
+};
 
-const ActivityCadence = () => {
-  // Exact 22-column x 7-row matrix matching the reference cadence heatmap
-  const weeks = useMemo(() => [
-    [0, 0, 0, 0, 0, 0, 1],
-    [0, 0, 0, 1, 0, 0, 0],
-    [0, 0, 0, 0, 1, 1, 1],
-    [0, 0, 1, 1, 1, 1, 0],
-    [0, 1, 0, 1, 0, 0, 0],
-    [0, 0, 0, 0, 1, 0, 0],
-    [0, 0, 1, 1, 0, 0, 0],
-    [0, 1, 0, 0, 0, 1, 0],
-    [0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 1, 0, 0, 0],
-    [0, 0, 0, 1, 0, 0, 0],
-    [1, 3, 1, 1, 1, 0, 1],
-    [1, 1, 1, 1, 1, 1, 1],
-    [1, 1, 1, 1, 1, 0, 1],
-    [1, 2, 2, 1, 1, 2, 1],
-    [1, 1, 1, 1, 1, 1, 1],
-    [1, 1, 1, 1, 1, 1, 1],
-    [1, 1, 1, 1, 1, 2, 1],
-    [1, 1, 1, 1, 1, 1, 1],
-    [1, 1, 1, 1, 1, 1, 2],
-    [2, 1, 1, 1, 1, 1, 1],
-    [1, 1, 2, 2, 4, 1, 0],
-  ], []);
+const formatNumber = (value) =>
+  typeof value === "number" ? value.toLocaleString("en-US") : "—";
+
+const ActivityCadence = ({ activity }) => {
+  const { total, activeDays, longestStreak, publicRepos, weeks, monthLabels } =
+    activity ?? FALLBACK;
 
   return (
     <section className="home-activity" aria-label="Engineering Cadence">
       <div className="home-activity__card">
-        {/* Left: 22-week heatmap grid */}
+        {/* Left: 53-week contribution heatmap */}
         <div className="home-activity__chart-wrapper">
-          <div className="home-activity__chart" id="activity-heatmap-chart">
-            {weeks.map((week, wIdx) => (
-              <div key={wIdx} className="home-activity__week">
-                {week.map((level, dIdx) => (
-                  <div
-                    key={dIdx}
-                    className="home-activity__day"
-                    data-level={level}
-                    title={`Day contribution level: ${level}`}
-                  />
-                ))}
-              </div>
-            ))}
+          <div
+            className="home-activity__chart"
+            id="activity-heatmap-chart"
+            role="img"
+            aria-label={`${formatNumber(total)} GitHub contributions in the last 22 weeks`}
+          >
+            {weeks.length > 0 ? (
+              <>
+                <div className="home-activity__months" aria-hidden="true">
+                  {monthLabels.map((label, index) =>
+                    label ? (
+                      <span
+                        key={index}
+                        className="home-activity__month"
+                        style={{
+                          left: `${(index / weeks.length) * 100}%`,
+                        }}
+                      >
+                        {label}
+                      </span>
+                    ) : null
+                  )}
+                </div>
+
+                <div className="home-activity__weeks">
+                  {weeks.map((week, wIdx) => (
+                    <div key={wIdx} className="home-activity__week">
+                      {week.map((day, dIdx) => (
+                        <div
+                          key={dIdx}
+                          className="home-activity__day"
+                          data-level={day ? day.level : 0}
+                          title={
+                            day
+                              ? `${day.count} contribution${day.count === 1 ? "" : "s"} on ${day.date}`
+                              : undefined
+                          }
+                        />
+                      ))}
+                    </div>
+                  ))}
+                </div>
+              </>
+            ) : (
+              <p className="home-activity__empty">
+                Contribution data is unavailable right now.
+              </p>
+            )}
           </div>
         </div>
 
@@ -56,8 +78,8 @@ const ActivityCadence = () => {
         <div className="home-activity__stats-panel">
           <div className="home-activity__stats-header">
             <div className="home-activity__stat-big">
-              <span className="home-activity__count">3,816</span>
-              <span className="home-activity__sub">contributions last year</span>
+              <span className="home-activity__count">{formatNumber(total)}</span>
+              <span className="home-activity__sub">contributions · 22 weeks</span>
             </div>
             <a
               href="https://github.com/izsal"
@@ -88,15 +110,23 @@ const ActivityCadence = () => {
           <div className="home-activity__stats-list">
             <div className="home-activity__stat-row">
               <span className="stat-label">Active days</span>
-              <span className="stat-val">178 days</span>
+              <span className="stat-val">
+                {activeDays === null ? "—" : `${formatNumber(activeDays)} days`}
+              </span>
             </div>
             <div className="home-activity__stat-row">
               <span className="stat-label">Longest streak</span>
-              <span className="stat-val">83 days</span>
+              <span className="stat-val">
+                {longestStreak === null
+                  ? "—"
+                  : `${formatNumber(longestStreak)} days`}
+              </span>
             </div>
             <div className="home-activity__stat-row">
               <span className="stat-label">Public repos</span>
-              <span className="stat-val">47 repos</span>
+              <span className="stat-val">
+                {publicRepos === null ? "—" : `${formatNumber(publicRepos)} repos`}
+              </span>
             </div>
           </div>
         </div>

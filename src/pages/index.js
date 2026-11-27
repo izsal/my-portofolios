@@ -8,8 +8,18 @@ import Projects from "@/components/Projects";
 import Skills from "@/components/Skills";
 import Education from "@/components/Education";
 import Contact from "@/components/Contact";
+import { getContributionActivity } from "@/lib/github";
 
-const Home = () => {
+export async function getStaticProps() {
+  const activity = await getContributionActivity();
+
+  return {
+    props: { activity },
+    revalidate: 3600,
+  };
+}
+
+const Home = ({ activity }) => {
   return (
     <>
       <Head>
@@ -30,7 +40,7 @@ const Home = () => {
         </div>
 
         <div className="reveal" style={{ "--delay": "0.08s" }}>
-          <ActivityCadence />
+          <ActivityCadence activity={activity} />
         </div>
 
         <div className="reveal" style={{ "--delay": "0.14s" }}>
