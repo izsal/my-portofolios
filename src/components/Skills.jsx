@@ -47,7 +47,7 @@ const Skills = () => {
   const categories = [
     {
       title: "Languages & Runtimes",
-      items: ["TypeScript", "JavaScript", "Golang", "PHP", "Dart", "SQL", "Bash", "HTML5", "CSS3"],
+      items: ["TypeScript", "JavaScript", "Golang", "PHP", "SQL", "Bash", "HTML5", "CSS3"],
     },
     {
       title: "Backend Frameworks & APIs",

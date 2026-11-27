@@ -242,6 +242,15 @@ export const TechIcon = ({ name, size = 15, className = "" }) => {
     );
   }
 
+  // FastAPI
+  if (norm.includes("fastapi")) {
+    return (
+      <svg width={size} height={size} viewBox="0 0 24 24" fill="#05998B" className={className}>
+        <path d="M12 0C5.375 0 0 5.375 0 12s5.375 12 12 12 12-5.375 12-12S18.625 0 12 0zm-.96 5.647h6.708l-4.03 6.24h3.09L7.6 18.612l1.567-5.613H6.24l4.8-7.352z" />
+      </svg>
+    );
+  }
+
   // REST API / API Integration
   if (norm.includes("api") || norm.includes("rest")) {
     return (
@@ -294,6 +303,15 @@ export const TechIcon = ({ name, size = 15, className = "" }) => {
     );
   }
 
+  // Vuetify
+  if (norm.includes("vuetify")) {
+    return (
+      <svg width={size} height={size} viewBox="0 0 24 24" fill="#1867C0" className={className}>
+        <path d="M12 0 1.6 6v12L12 24l10.4-6V6L12 0zm0 2.31 8.31 4.79v9.8L12 21.69l-8.31-4.79v-9.8L12 2.31zM7.4 7.7l4.6 7.96 4.6-7.96H19l-7 12.11L5 7.7h2.4z" />
+      </svg>
+    );
+  }
+
   // Vue.js
   if (norm.includes("vue")) {
     return (
@@ -308,6 +326,25 @@ export const TechIcon = ({ name, size = 15, className = "" }) => {
     return (
       <svg width={size} height={size} viewBox="0 0 24 24" fill="#FFCA28" className={className}>
         <path d="M3.89 15.672L6.255.461A.542.542 0 0 1 7.27.282l2.543 4.772zm16.791.432L18.318 5.09a.542.542 0 0 0-.968-.124L3.89 16.104l7.152 4.024a2.03 2.03 0 0 0 1.916 0zM14.2 7.77l-1.63-3.116a.542.542 0 0 0-.958 0L3.89 15.672z" />
+      </svg>
+    );
+  }
+
+  // Pinia
+  if (norm.includes("pinia")) {
+    return (
+      <svg width={size} height={size} viewBox="0 0 24 24" fill="#FFD859" className={className}>
+        <path d="M4.2 4.2h15.6l-1.32 5.4a3 3 0 0 1-2.92 2.3H8.44a3 3 0 0 1-2.92-2.3L4.2 4.2zm2.35 1.8.4 1.64a1.3 1.3 0 0 0 1.26 1h7.58a1.3 1.3 0 0 0 1.26-1l.4-1.64H6.55z" />
+        <path d="M9.1 12.9h5.8l-.62 2.55c-.7 2.87-1.94 5.5-2.28 6.35-.34-.85-1.58-3.48-2.28-6.35L9.1 12.9z" />
+      </svg>
+    );
+  }
+
+  // Three.js
+  if (norm.includes("three")) {
+    return (
+      <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" className={className}>
+        <path d="M12 1.5 1.8 7.4l2.6 12.6L12 22.5l7.6-2.5 2.6-12.6L12 1.5zm0 2.4 7.7 4.2-1.9 9.2L12 19.9l-5.8-2.6-1.9-9.2L12 3.9z" />
       </svg>
     );
   }

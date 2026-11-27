@@ -1,6 +1,48 @@
 // components/data.js
 export const projectData = [
   {
+    id: 9,
+    title: "Qwarts Finance — Budgeting SaaS",
+    description:
+      "Live budgeting SaaS for tracking daily cash flow, multi-wallet balances, category budgets, and savings goals. Vue 3 + Vuetify SPA with Pinia state, Chart.js analytics, and a Go REST API with JWT auth and PostgreSQL.",
+    image: [
+      "/images/projects/QwartsFinance/finance_01.png",
+      "/images/projects/QwartsFinance/finance_02.png",
+      "/images/projects/QwartsFinance/finance_03.png",
+      "/images/projects/QwartsFinance/finance_04.png",
+    ],
+    technologies: ["Vue.js", "Vuetify", "Pinia", "Go", "PostgreSQL", "Chart.js"],
+    github: "https://github.com/izsal/Finance-app-fullstack",
+    link: "https://qwarts.my.id",
+  },
+  {
+    id: 10,
+    title: "Qwarts Kompress — Compression SaaS",
+    description:
+      "Compression SaaS for documents, images, and video with lossless XZ/Bzip2/Gzip, WebP conversion, and H.264 video jobs. FastAPI service providing JWT auth, daily quota plans, Duitku payments, and an admin console.",
+    image: [
+      "/images/projects/QwartsKompress/kompress_01.png",
+      "/images/projects/QwartsKompress/kompress_02.png",
+      "/images/projects/QwartsKompress/kompress_03.png",
+    ],
+    technologies: ["Vue.js", "FastAPI", "Pinia", "Docker", "REST API"],
+    github: "https://github.com/izsal/Qwarts-Kompress",
+    link: "https://kompres.qwarts.my.id",
+  },
+  {
+    id: 11,
+    title: "Qwarts Weather Dashboard",
+    description:
+      "Full-stack weather dashboard with hourly and 3-day forecasts, city autocomplete, saved favorites, and shareable links. Animated Three.js backgrounds react to live weather conditions and time of day.",
+    image: [
+      "/images/projects/QwartsWeather/weather_01.png",
+      "/images/projects/QwartsWeather/weather_02.png",
+    ],
+    technologies: ["React", "FastAPI", "Redis", "Docker", "REST API"],
+    github: "https://github.com/izsal/weather-app",
+    link: null,
+  },
+  {
     id: 0,
     title: "Vegeta E-Commerce Store",
     description:
